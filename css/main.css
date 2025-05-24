@@ -1,0 +1,184 @@
+/* set color constants */
+:root {
+  --text-color: #d1fb96;
+  --background-color: #51983c;
+  --nav-color: #006525;
+  --cool-color: #008CBA;
+  --warm-color: #FF5349;
+}
+
+/* body and global css */
+
+body {
+    background-color: var(--background-color);
+    margin: 0px;
+}
+
+.cal-sans-regular {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: flex;
+}
+
+/* header elements */
+
+.header {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color: var(--nav-color);
+    color: var(--text-color);
+    font-size: 40px;
+    align-items: center;
+}
+
+.header::before {
+    content: "";
+    display: inline-block;
+    background-image: url('../img/sprout.png');
+    background-size: 35px;
+    height: 35px;
+    width: 35px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+a {
+    font-size: 16px;
+    padding-left: 30px;
+    color: var(--text-color);
+}
+
+a:hover {
+    font-style: italic;
+}
+
+/* main content css */
+
+.row {
+    display: flex;
+}
+
+.sidebar {
+    width: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex: 35%;
+}
+
+.directions {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+p:nth-child(2) {
+    text-decoration: underline dotted var(--nav-color);
+}
+
+.gallery {
+    flex: 65%;
+}
+
+/* grid of projects */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-grid > div {
+    display: grid;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#cool-overlay {
+    grid-row: 1;
+    grid-column: 1;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: var(--cool-color);
+}
+
+#warm-overlay {
+    grid-row: 1;
+    grid-column: 1;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: var(--warm-color);
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+:is(#carrots:hover, 
+    #rainbowchard:hover,
+    #garlic:hover,
+    #lettuce:hover) #cool-overlay {
+    opacity: 1;
+}
+
+:is(#tomatoes:hover, 
+    #eggplant:hover,
+    #strawberries:hover,
+    #peppers:hover) #warm-overlay {
+    opacity: 1;
+}
+
+/* footer */
+
+.footer {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    background-color: var(--nav-color);
+    color: var(--text-color);
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* responsive media queries */
+
+@media screen and (max-width: 805px) {
+    .header {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    a {
+        font-size: 12px;
+        padding-left: 7px;
+    }
+
+    .sidebar {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
