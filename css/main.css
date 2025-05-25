@@ -23,7 +23,6 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    flex-wrap: flex;
 }
 
 /* header elements */
@@ -103,7 +102,7 @@ img {
     grid-column: 1;
 }
 
-#cool-overlay {
+.cool-overlay {
     grid-row: 1;
     grid-column: 1;
     opacity: 0;
@@ -111,7 +110,7 @@ img {
     background-color: var(--cool-color);
 }
 
-#warm-overlay {
+.warm-overlay {
     grid-row: 1;
     grid-column: 1;
     opacity: 0;
@@ -134,14 +133,14 @@ img {
 :is(#carrots:hover, 
     #rainbowchard:hover,
     #garlic:hover,
-    #lettuce:hover) #cool-overlay {
+    #lettuce:hover) .cool-overlay {
     opacity: 1;
 }
 
 :is(#tomatoes:hover, 
     #eggplant:hover,
     #strawberries:hover,
-    #peppers:hover) #warm-overlay {
+    #peppers:hover) .warm-overlay {
     opacity: 1;
 }
 
